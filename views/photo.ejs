@@ -1,0 +1,102 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Get Start</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.1.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <br>
+  <br>
+  
+  <div class="container">
+  <h1><%=R.access_token%> gogo</h1>
+
+  <% all.user.forEach(function(us) { if(_id == us.id){  var user_name = us.username %>   
+ <p><img src="/images/boy.jpg" class="img-circle" width="100" height="100" alt=""> &nbsp; 
+ <%=user_name%></p> 
+  <form method="post" action="/photo/addphoto" novalidate enctype="multipart/form-data">
+  <div class="form-field">
+    <label for="message"> <h2><p>Images </p></h2></label>
+   <input type="file" id="image" name="image"  onchange="change_pic()"/>
+   <img src="/images/11.png%>" id ="imgg" class="img-rounded" width="400" height="400" alt="">
+                    
+     </div>
+  <br>
+  <div class="form-actions">
+    <button class="btn" type="submit">Post</button>
+  </div>
+</form> 
+<% }});%>
+<hr>
+      <h1>  <p>All Photo Posts</p> </h1>
+    
+      <% var but%>
+        <ul>
+            <% all.photos.forEach(function(image) {
+                all.user.forEach(function(us) {
+                   if(image.user_id == us.id){
+                    if(_id == us.id){
+                         but = 'active';
+                            }   
+                        else {
+                             but = 'hide';
+                        
+                            }
+                         
+                       %>
+               
+                <li>
+                    <div class="well">
+                    <img src="/images/boy.jpg" class="img-circle" width="100" height="100" alt=""> &nbsp; <%= us.username %> 
+                    <div class="der" align="left" dir="ltr">
+                    <%= image.date %>
+                    </div>
+                    <br>
+                     <br>
+                     <img src="/images/<%= image.image %>" class="img-rounded" width="900" height="400" alt="">
+                     
+                     <br>
+                     <br>
+                     
+                     <div class="der" align="left" dir="ltr">
+                        
+                        <a href="/photo/editim/<%= image.id %>" class="btn btn-primary <%= but %>"  > Edit Image </a>
+                        <a href="/photo/deletephoto/<%= image.id %>" class="btn btn-danger <%= but %>"  >  Delete Image </a>
+                                                
+                     </div>
+                    </div>
+                </li>
+              
+                <%
+                
+            
+             } }); }); %>
+        </ul>
+ 
+</div>
+
+<script>
+function change_pic()
+    {
+        var input = document.getElementById('image');
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgg').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+   
+    };
+</script>
+    </body>
+  
+</html>

@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  background-color: #36465d;
+  background-image: url("/images/1.jpg");
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+.der{
+  margin-left: 80%;
+}
+.well{
+  opacity: 0.8;
+  filter: alpha(opacity=60);
+}
+
+p{
+   color: white;
+}
+.tab{
+  text-align: center;
+}
+
+td{
+
+  margin-right: 10px;
+}

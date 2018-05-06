@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Get Start</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.1.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <br>
+  <br>
+  <div class="container">
+  <br><br>
+  
+  <% all.user.forEach(function(us) {if(_id == us.id){ var user_name = us.username %>
+           
+    <p><img src="/images/boy.jpg" class="img-circle" width="100" height="100" alt=""> &nbsp; 
+    <%=user_name%></p> 
+  <form method="post" action="/text/addtext" novalidate>
+      <div class="form-field">
+        <label for="message"> <h2><p>Content </p></h2></label>
+       <textarea class="form-control" rows="5" name="content" id="content" placeholder="Write What Are You Think About !">Write What Are You Think About ! </textarea>
+        
+         </div>
+      <br>
+      <div class="form-actions">
+        <button class="btn btn-success" type="submit">Post</button>
+      </div>
+    </form> 
+    <% }});%>
+    <hr>
+      <h1>  <p>All Posts</p> </h1>
+    
+      <% var but%>
+        <ul>
+            <% all.text.forEach(function(drink) {
+                all.user.forEach(function(us) {
+                   if(drink.user_id == us.id){
+                    if(_id == us.id){
+                         but = 'active';
+                            
+                        }   
+                        else {
+                            
+                        but = 'hide';
+                        
+                            
+                    }
+                         
+                       %>
+               
+                <li>
+                    <div class="well">
+                    <img src="/images/boy.jpg" class="img-circle" width="100" height="100" alt=""> &nbsp; <%= us.username %> 
+                    <div class="der" align="left" dir="ltr">
+                    <%= drink.date %>
+                    </div>
+                    <br>
+                     <br>
+                     <%= drink.content %>
+                     
+                     
+                     <br>
+                     
+                     <div class="der" align="left" dir="ltr">
+                        
+                        <a href="/text/edit/<%= drink.id %>" class="btn btn-primary <%= but %>"  > Edit Post </a>
+                        <a href="/text/deletetext/<%= drink.id %>" class="btn btn-danger <%= but %>"  >  Delete Post </a>
+                                                
+                     </div>
+                    </div>
+                </li>
+              
+                <%
+                
+            
+             } }); }); %>
+        </ul>
+ 
+</div>
+    </body>
+  
+</html>

@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  background-color: #36465d;
+  background-image: url("/images/1.jpg");
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.well{
+  margin: 17%;
+  width: 40%;
+  border: 1px solid ;
+  padding: 10px;
+  margin-left: 20%;
+  opacity: 0.8;
+  filter: alpha(opacity=60);
+
+}
+
+
+
+
+.wellgetstart{
+  margin: 5%;
+  width: 70%;
+  border: 0px solid ;
+  padding: 10px;
+  margin-left: 5%;
+  opacity: 0.8;
+  filter: alpha(opacity=60);
+
+}
+
+.tab{
+  text-align: center;
+}
+
+td{
+
+  margin-right: 10px;
+}
